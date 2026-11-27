@@ -95,9 +95,9 @@ map.on("load", () => { // quand le style et ses ressources sont chargés
     source: "parc",
     "source-layer": "coeur",
     paint: {
-      "fill-color": "#41ab5d",
+      "fill-color": "#c40895",
       "fill-opacity": 0.25, // aplat transparent : le fond se lit à travers
-      "fill-outline-color": "#006d2c",
+      "fill-outline-color": "#c40895",
     },
   }, ecritures);
 
