@@ -27,7 +27,7 @@ const CREDITS = "Communes : IGN, ADMIN EXPRESS ; population : INSEE (2022) ; "
   + "cœur et aire d'adhésion : DREAL Nouvelle-Aquitaine";
 
 // Couleurs des classes de part de territoire en cœur (identiques à la légende de index.html)
-const COULEURS_PART_COEUR = ["#e8e8e8", "#fee5d9", "#fcae91", "#fb6a4a", "#cb181d"];
+const COULEURS_PART_COEUR = ["#e8e8e8", "#f7fcf0", "#c7e9c0", "#74c476", "#238b45"];
 
 map.on("load", () => { // quand le style et ses ressources sont chargés
   // Les couches du Parc se glissent sous les écritures du Plan IGN, en haut de la pile
