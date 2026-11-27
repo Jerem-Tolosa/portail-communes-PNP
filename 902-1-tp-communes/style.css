@@ -1,0 +1,181 @@
+/* Portrait des communes du Parc — mise en page de la page et du panneau légende */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #252525;
+}
+
+#map {
+  position: fixed;
+  inset: 0;
+}
+
+.panneau {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 300px;
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.panneau h1 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.sous-titre {
+  margin: 0 0 8px;
+  color: #525252;
+  font-size: 13px;
+}
+
+#legende summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#legende h2 {
+  font-size: 13px;
+  margin: 10px 0 4px;
+}
+
+.classes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.classes li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 3px 0;
+}
+
+.pastille {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #737373;
+  border-radius: 3px;
+}
+
+.tiret {
+  flex: none;
+  width: 22px;
+  border-top: 3px dashed #006d2c;
+}
+
+.tailles {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin: 6px 0 2px;
+}
+
+.exemple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: #525252;
+}
+
+.rond {
+  display: inline-block;
+  border-radius: 50%;
+  background: #08519c;
+  opacity: 0.8;
+  border: 1px solid #ffffff;
+}
+
+.note {
+  font-size: 12px;
+  color: #737373;
+  margin: 2px 0 0;
+}
+
+.annee {
+  font-weight: 400;
+  color: #737373;
+}
+
+.credits {
+  border-top: 1px solid #d9d9d9;
+  margin: 10px 0 0;
+  padding-top: 8px;
+  font-size: 11px;
+  color: #525252;
+}
+
+.maplibregl-popup-content {
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+.fiche h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.fiche ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fiche li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 2px 0;
+}
+
+.fiche .valeur {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* responsive pour le telephone */
+
+@media (max-width: 640px) {
+  .panneau {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-height: 45%;
+    border-radius: 12px 12px 0 0;
+    padding: 10px 12px;
+  }
+
+  .panneau h1 {
+    font-size: 15px;
+  }
+
+  .sous-titre {
+    font-size: 12px;
+  }
+
+  .credits {
+    font-size: 10px;
+  }
+}

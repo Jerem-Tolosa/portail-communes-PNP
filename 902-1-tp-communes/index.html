@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portrait des communes du Parc national des Pyrénées</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.16.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- pmtiles en script classique : il crée la variable globale `pmtiles` utilisée par main.js -->
+  <script src="https://unpkg.com/pmtiles@4.5.0/dist/pmtiles.js"></script>
+</head>
+<body>
+  <div id="map"></div>
+
+  <aside class="panneau" id="panneau">
+    <h2>Portrait des communes du Parc national des Pyrénées</h2>
+
+      <h1>Part du territoire communale en cœur de Parc</h1>
+      <ul class="classes">
+        <li><span class="pastille" style="background:#e8e8e8"></span> 0 % : aire d'adhésion seule</li>
+        <li><span class="pastille" style="background:#fee5d9"></span> moins de 10 %</li>
+        <li><span class="pastille" style="background:#fcae91"></span> 10 à 25 %</li>
+        <li><span class="pastille" style="background:#fb6a4a"></span> 25 à 50 %</li>
+        <li><span class="pastille" style="background:#cb181d"></span> plus de 50 %</li>
+      </ul>
+
+      <h1>Population municipale <span class="annee">(2022)</span></h1>
+      <div class="tailles">
+        <span class="exemple"><span class="rond" style="width:9px;height:9px"></span>500 hab</span>
+        <span class="exemple"><span class="rond" style="width:19px;height:19px"></span>2 000 hab</span>
+        <span class="exemple"><span class="rond" style="width:35px;height:35px"></span>7 000 hab</span>
+      </div>
+      <p class="note">L'aire de chaque cercle est proportionnel à la population.</p>
+
+      <h1>Limites du Parc</h1>
+      <ul class="classes">
+        <li><span class="pastille" style="background:#41ab5d;opacity:.35"></span> cœur du Parc</li>
+        <li><span class="tiret"></span> aire d'adhésion</li>
+      </ul>
+
+
+    <p class="credits">
+      Fond : Plan IGN © IGN. Communes : IGN, ADMIN EXPRESS
+      Population : INSEE, population municipale 2022
+      Cœur et aire d'adhésion : DREAL Nouvelle-Aquitaine
+    </p>
+  </aside>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
