@@ -14,7 +14,6 @@ Carte en ligne répondant à la commande du conseil d'administration du Parc : q
 ## Mise en place
 
 En local : `python3 serveur.py 5000`, puis ouvrir `http://localhost:5000/`.
-Pour publier : pousser le dossier dans un dépôt GitHub public et activer GitHub Pages (Settings > Pages) ; l'adresse sera `https://<identifiant>.github.io/<depot>/`.
 
 ## Choix
 
@@ -22,15 +21,13 @@ Pour publier : pousser le dossier dans un dépôt GitHub public et activer GitHu
 
 **Quelle représentation pour quelle donnée.**
 
-- La part de territoire en cœur est un taux : choroplèthe en 5 classes (gris = aire d'adhésion seule, dégradé d'orange de plus en plus soutenu).
-- La population est un effectif : cercles d'aire proportionnelle à la population, un point par commune.
-- Le cœur et l'aire d'adhésion : aplat vert transparent et contour tireté.
+- La part de territoire en cœur est un taux : choroplèthe en 5 classes (gris = aire d'adhésion seule, dégradé vert de plus en plus soutenu).
+- La population est un effectif : cercles d'aire proportionnelle à la population
+- Le cœur et l'aire d'adhésion : aplat rose transparent.
 
-**Technique.** Les données sont tuilées en un seul fichier PMTiles (GDAL, `ogr2ogr -f PMTiles`), lu par la carte par plages grâce au protocole `pmtiles://`, sur le fond vectoriel Plan IGN. La légende est écrite à la main en HTML avec les mêmes couleurs que la carte. Sur téléphone (≤ 640 px), le panneau passe en bas de l'écran et se replie.
+**Technique** Les données sont tuilées en un seul fichier PMTiles (GDAL, `ogr2ogr -f PMTiles`), lu par la carte par plages grâce au protocole `pmtiles://`, sur le fond vectoriel Plan IGN.
 
-## Contrôles
-
-Tous ces chiffres sont imprimés par `python3 preparer_donnees.py`, qui se relance sans erreur depuis ce dossier :
+## Contrôles :
 
 - sélection : **65 communes**, toutes avec leurs points représentatifs vérifiés ;
 - population des communes retenues : **29 463 hab** ; part maximale dans le Parc : **100 %** ;
@@ -48,12 +45,11 @@ Tous ces chiffres sont imprimés par `python3 preparer_donnees.py`, qui se relan
 
 ## Journal de bord
 
-1. `fiona` absent de l'environnement : remplacé par `pyogrio` pour lister les couches du GeoPackage.
+1. Export des gpkg directement en geojson pour visualisation
 2. La fiche affichait parfois une part supérieure à 100 % : les parts étaient rapportées au mauvais tracé. Corrigé, avec un contrôle `max <= 100` ajouté.
 3. La sélection « toute intersection > 0 » incluait des communes qui ne touchent pas réellement le Parc (artefacts de généralisation) : sélection au seuil de 1 % sur le tracé précis.
 4. `python -m http.server` ne répond pas aux plages (PMTiles illisible) : utilisation de `serveur.py`.
 5. Le PMTiles ne se lisait pas au premier essai : régénéré avec `-preserve_fid` (sans identifiant, pas de survol possible).
-6. Favicon en 404 : corrigé, la console reste propre.
 
 ## Sources
 
