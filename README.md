@@ -41,7 +41,6 @@ En local : `python3 serveur.py 5000`, puis ouvrir `http://localhost:5000/`.
 - La carte montre la population de chaque commune, pas le nombre d'habitants vivant dans le Parc : il faudrait une population localisée (adresses ou îlots INSEE).
 - La population est celle de 2022 (INSEE, population municipale).
 - L'affichage utilise le tracé généralisé ; les parts, elles, sont calculées sur le tracé à pleine précision.
-- Le fond Plan IGN et les bibliothèques (unpkg) demandent une connexion internet.
 
 ## Journal de bord
 
